@@ -1,0 +1,17 @@
+html
+    head
+        link(rel='stylesheet', type='text/css', href='/main.css')
+
+    body
+        form(method='POST', action=user ? '/edit/' + user.id : '/create')
+            div(class='input-container')
+
+                input(id='name', name='name', value=user ? user.userName : '', placeholder='name')
+
+                input(id='email', name='email', value=user ? user.email : '', placeholder='email')
+            
+                input(id='age', name='age', value=user ? user.age : '', placeholder='age')
+
+
+            div
+                button(type='submit')= user ? 'Save Changes' : 'Add user'

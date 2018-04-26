@@ -1,0 +1,26 @@
+html
+    head
+        title= title
+        link(rel='stylesheet', type='text/css', href='main.css')
+    body
+        h1= message
+        h2 Users:
+        table
+            tr
+                th Name
+                th Email
+                th Age
+                th 
+                th 
+            each val in users
+                tr
+                    td= val.userName
+                    td= val.email
+                    td= val.age
+                    td(class='modify-cell') 
+                        a(href='/user-edit/'+ val.id) edit
+
+                    td(class='modify-cell')
+                        a(href='/user-delete/' + val.id) delete
+        button(href='/add')
+            a(href='/add') Add a user
