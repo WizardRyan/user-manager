@@ -5,6 +5,21 @@ html
     body
         h1= message
         h2 Users:
+
+        form(method='POST', action='/search')
+            input(id='searchInput' name="searchInput" placeholder="enter a user's name...")
+            button(type='submit') Search for user
+        
+        div
+            button
+                a(href='/reload') Reset
+        button(href='/add')
+            a(href='/add') Add a user
+        button
+            a(href='/sort-ascend') Sort Ascending
+        button
+            a(href='/sort-descend') Sort Descending
+
         table
             tr
                 th Name
@@ -22,5 +37,4 @@ html
 
                     td(class='modify-cell')
                         a(href='/user-delete/' + val.id) delete
-        button(href='/add')
-            a(href='/add') Add a user
+
